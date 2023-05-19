@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #celula {
+            width: auto;
+            border: red solid 1px;
+
+
+        }
+    </style>
+
+    <script>
+        function loop() {
+
+            let var1 = document.getElementById('campo').value;
+
+            console.log(var1)
+
+            document.getElementById('celula').innerHTML = var1;
+
+        }
+
+
+    </script>
+
+</head>
+
+<body>
+
+    <!-- <input type="text" id="campo" />
+
+    <button onclick="loop()">Enviar</button> -->
+
+    <div id="celula">
+        <h1>Cantando os patinhos</h1>
+    </div>
+
+
+
+
+    <script>
+        for (let i = 1; i <= 8; i++) {
+            let elemento = document.createElement('p');
+            let aux = i;
+            if (i > 1) {
+                aux = aux + ' patinhos foram';
+            } else {
+                aux = aux + ' patinho foi'
+            }
+
+            aux = aux + ' passear, além das montanhas para brincar, mamãe gritou '
+
+
+            for (let j = i; j > 0; j--) {
+                aux += ' QUÁ '                
+            }            
+
+            if ((i - 1) > 0) {
+                aux = aux + ' só ' + (i - 1);
+                
+                if(i-1 > 1)
+                    aux += ' patinhos voltaram '
+                else
+                    aux += ' patinho voltou '
+
+                aux = aux + 'de lá'
+
+            } else {
+                aux = aux + ' nenhum patinho voltou de lá'
+            }
+
+            elemento.innerHTML = aux
+            document.getElementById('celula').appendChild(elemento)
+
+
+        }
+    </script>
+
+
+</body>
+
+</html>
